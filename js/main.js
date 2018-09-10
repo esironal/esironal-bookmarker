@@ -1,3 +1,4 @@
+console.re.log('remote log test');
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
@@ -30,15 +31,23 @@ function saveBookmark(e){
     var bookmarks = [];
     // Add to array
     bookmarks.push(bookmark);
+    bookmark.push(logmark);
+    console.re.log('This is %s', logmark);
     // Set to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    console.re.log('This is %s', bookmarks);
+    console.re.log('This is %s', localStorage);
   } else {
     // Get bookmarks from localStorage
     var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     // Add bookmark to array
     bookmarks.push(bookmark);
+    bookmark.push(logmark);
+    console.re.log('This is %s', logmark);
     // Re-set back to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    console.re.log('This is %s', bookmarks);
+    console.re.log('This is %s', localStorage);
   }
 
   // Clear form
@@ -91,23 +100,6 @@ function fetchBookmarks(){
   }
 }
 
-// Validate Form
-function validateForm(siteName, siteUrl){
-  if(!siteName || !siteUrl){
-    alert('Please fill in the form');
-    return false;
-  }
-
-  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-  var regex = new RegExp(expression);
-
-  if(!siteUrl.match(regex)){
-    alert('Please use a valid URL');
-    return false;
-  }
-
-  return true;
-}
 
 function addhttp(url) {
   if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
@@ -115,3 +107,4 @@ function addhttp(url) {
   }
   return url;
 }
+console.re.log();
