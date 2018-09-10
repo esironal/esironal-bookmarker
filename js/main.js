@@ -1,4 +1,4 @@
-console.re.log('bookmarks');
+console.re.log('remote log test');
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
