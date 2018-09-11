@@ -1,4 +1,6 @@
-console.re.log('remote log test');
+consolere.ready(function() {
+  console.re.log();
+});
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
@@ -33,9 +35,11 @@ function saveBookmark(e){
     bookmarks.push(bookmark);
     // Set to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    console.re.log(bookmarks);
   } else {
     // Get bookmarks from localStorage
     var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    console.re.log(bookmarks);
     // Add bookmark to array
     bookmarks.push(bookmark);
     // Re-set back to localStorage
