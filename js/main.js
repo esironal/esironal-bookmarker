@@ -1,4 +1,4 @@
-console.re.log('%s', localStorage);
+
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
@@ -76,6 +76,7 @@ function deleteBookmark(url){
 function fetchBookmarks(){
   // Get bookmarks from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  console.re.log('bookmarks');
   // Get output id
   var bookmarksResults = document.getElementById('bookmarksResults');
 
