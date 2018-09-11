@@ -1,4 +1,4 @@
-console.re.log()
+console.re.log('%s', localStorage);
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
