@@ -1,6 +1,4 @@
-consolere.ready(function() {
-  console.re.log();
-});
+console.re.log()
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
